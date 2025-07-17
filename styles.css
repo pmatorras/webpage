@@ -21,6 +21,18 @@ body {
   object-fit: cover;
   margin-bottom: 1em;
 }
+.cover-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('cover-image.JPG');
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Puts it "under" everything */
+}
+
 
 ul {
   list-style-type: disc;
@@ -40,4 +52,22 @@ a {
 
 a:hover {
   color: #1abc9c;
+}
+.contact-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5em;
+}
+.contact-icons li {
+  display: inline-block;
+}
+.contact-icons a {
+  color: #333;
+  font-size: 1em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-icons a:hover {
+  color: #2a8fd5; /* your accent color */
 }
