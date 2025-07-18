@@ -3,11 +3,20 @@ body {
   background: #f7f7f7;
   color: #2c3e50;
 }
+@media (max-width: 600px) {
+  .container {
+    max-width: 97vw;      /* Almost the entire viewport width */
+    padding: 1.2em 0.6em; /* Less padding on all sides */
+    margin: 1em auto;     /* Reduced vertical margin */
+    border-radius: 8px;   /* Slightly rounder corners */
+    box-sizing: border-box;
+  }
+}
 
 .container {
   max-width: 600px;
-  margin: 40px auto;
-  padding: 2em;
+  margin: 40pt auto;
+  padding: 3em;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 2px 8px #ccc;
