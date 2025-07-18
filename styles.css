@@ -5,8 +5,8 @@ body {
 }
 @media (max-width: 600px) {
   .container {
-    max-width: 97vw;      /* Almost the entire viewport width */
-    padding: 1.2em 0.6em; /* Less padding on all sides */
+    max-width: 98vw;      /* Almost the entire viewport width */
+    padding: 1.2em 0.3em; /* Less padding on all sides */
     margin: 1em auto;     /* Reduced vertical margin */
     border-radius: 8px;   /* Slightly rounder corners */
     box-sizing: border-box;
