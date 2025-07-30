@@ -1,2 +1,2 @@
 # webpage
-creating a webpage for my domain from scratch
+A simple webpage for my domain, built on git pages and html
