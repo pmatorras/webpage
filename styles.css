@@ -22,7 +22,12 @@ body {
   box-shadow: 0 2px 8px #ccc;
   text-align: center;
 }
-
+.left-right-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* space after this block */
+  }
 .profile-img {
   width: 140px;
   height: 140px;
