@@ -3,12 +3,17 @@ body {
   background: #f7f7f7;
   color: #2c3e50;
 }
+
 @media (max-width: 600px) {
   .container {
-    max-width: 98vw;      /* Almost the entire viewport width */
-    padding: 1.2em 0.3em; /* Less padding on all sides */
-    margin: 1em auto;     /* Reduced vertical margin */
-    border-radius: 8px;   /* Slightly rounder corners */
+    max-width: 98vw;
+    /* Almost the entire viewport width */
+    padding: 1.2em 0.3em;
+    /* Less padding on all sides */
+    margin: 1em auto;
+    /* Reduced vertical margin */
+    border-radius: 8px;
+    /* Slightly rounder corners */
     box-sizing: border-box;
   }
 }
@@ -22,14 +27,18 @@ body {
   box-shadow: 0 2px 8px #ccc;
   text-align: left;
 }
+
 .left-right-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px; /* space after this block */
-  }
-  li.no-bullet {
-  list-style-type: none;  /* Removes bullet for this specific li */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  /* space after this block */
+}
+
+li.no-bullet {
+  list-style-type: none;
+  /* Removes bullet for this specific li */
 }
 
 .profile-img {
@@ -39,6 +48,7 @@ body {
   object-fit: cover;
   margin-bottom: 1em;
 }
+
 .cover-image {
   position: fixed;
   top: 0;
@@ -48,12 +58,14 @@ body {
   background-image: url('cover-image.JPG');
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Puts it "under" everything */
+  z-index: -1;
+  /* Puts it "under" everything */
 }
 
 p {
   text-align: left;
 }
+
 ul {
   list-style-type: square;
   padding-left: 0;
@@ -63,19 +75,25 @@ ul {
 li {
   margin: 8px 25px;
 }
+
 li::marker {
-  content: '\25C6\2003'; /* Your custom symbol */
+  content: '\25C6\2003';
+  /* Your custom symbol */
   font-size: 0.9em;
-  color:  #333;
+  color: #333;
 }
+
 li li::marker {
-  content: '\25A0\2003'; /* Your custom symbol */
+  content: '\25A0\2003';
+  /* Your custom symbol */
   font-size: 0.9em;
-  color:  #333;
+  color: #333;
 }
+
 li li {
   margin: 4px 30px;
 }
+
 a {
   text-decoration: none;
   color: #2980b9;
@@ -85,25 +103,35 @@ a {
 a:hover {
   color: #1abc9c;
 }
+
 ul.about-icons li::marker {
-  content: '\25CB\2003'; /* Star symbol */
+  content: '\25CB\2003';
+  /* Star symbol */
   font-size: 1em;
   color: #2c3e50;
   margin-right: 1.5em;
 }
+
 h2 {
   text-align: center;
 }
+
 ul.contact-icons {
-  list-style-type: none;  /* Remove bullets */
-  padding: 0;             /* Remove padding */
-  margin: 0;              /* Remove margin */
-  text-align: left;       /* Optional: align text left */
+  list-style-type: none;
+  /* Remove bullets */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margin */
+  text-align: left;
+  /* Optional: align text left */
 }
 
 ul.contact-icons li {
-  display: inline-block;  /* Make list items appear in one line */
-  margin: 10px 10px;     /* Space between items */
+  display: inline-block;
+  /* Make list items appear in one line */
+  margin: 10px 10px;
+  /* Space between items */
 }
 
 .contact-icons a {
@@ -112,9 +140,12 @@ ul.contact-icons li {
   text-decoration: none;
   transition: color 0.2s;
 }
+
 .contact-icons a:hover {
-  color: #2a8fd5; /* your accent color */
+  color: #2a8fd5;
+  /* your accent color */
 }
+
 .container.backtop {
   text-align: center;
 }
