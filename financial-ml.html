@@ -67,20 +67,20 @@
       <section>
         <h2>Quick start</h2>
         <pre><code># Editable install (recommended for development)
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-python -m pip install -U pip 
-pip install -e .
+          python -m venv .venv
+          source .venv/bin/activate  # Windows: .venv\Scripts\activate
+          python -m pip install -U pip 
+          pip install -e .
 
-# Refresh constituents and prices (test mode)
-python -m financial_ml --test -d info --newtable --newinfo
+          # Refresh constituents and prices (test mode)
+          python -m financial_ml --test -d info --newtable --newinfo
 
-# Fetch fundamentals (test mode shown)
-python -m financial_ml --test fundamentals
+          # Fetch fundamentals (test mode shown)
+          python -m financial_ml --test fundamentals
 
-# Train baseline models
-python -m financial_ml train
-</code></pre>
+          # Train baseline models
+          python -m financial_ml train
+          </code></pre>
         <ul class="contact-icons">
           <li>For more information check the Setup and usage details in <a href="README.md">GitHub</a></li>
         </ul>
