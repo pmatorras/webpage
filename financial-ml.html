@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>About | Pablo Matorras-Cuevas</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<div class="cover-image"></div>
+<div class="container">
+      <header class="hero">
+        <h1>Financial‑ML</h1>
+        <p>
+          <a href="https://github.com/pmatorras/financial-ml">GitHub repository </a></li> that ingests S&amp;P 500 constituents, downloads monthly prices, engineers features, and trains baseline classifiers to predict 12‑month outperformance vs a benchmark. 
+        </p>
+        <p>
+          Optionally fetches fundamentals from public filings and persists tidy, time‑aligned datasets for downstream modeling. 
+        </p>
+      </header>
+
+      <section>
+        <h2>What this builds</h2>
+        <ul>
+          <li>Symbols and monthly adjusted closes for S&amp;P 500 tickers plus a benchmark, saved as tidy CSVs for the full or test universe.</li>
+          <li>Selected quaterly fundamentals (assets, liabilities, equity, revenues, net income, EPS, shares) normalized as point‑in‑time series.</li>
+          <li>Binary label of 12‑month forward excess return vs benchmark, with out‑of‑fold predictions for analysis.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Tools and infraestructure</h2>
+        <ul>
+          <li>Python ≥ 3.10, pandas, numpy</li>
+          <li>scikit‑learn pipelines and TimeSeriesSplit</li>
+          <li>yfinance, requests, pyarrow</li>
+          <li>CLI entrypoints for info, fundamentals, and train</li>
+        </ul>
+      </section>
+
+      <section id="features-used">
+          <h2>Features used</h2>
+
+          <h3>Market behaviour</h3>
+          <ul>
+            <li>r1 (1m return), r12 (12m return), mom121 (12m − 1m momentum), vol3 (3m std), vol12 (12m std) — short/medium trend and risk regime signals for momentum/volatility framing.</li>
+          </ul>
+
+          <h3>Fundamentals</h3>
+          <ul>
+            <li>Value/profitability (Book‑to‑Market, ROE, ROA, Net Margin), balance‑sheet risk (Leverage), investment intensity (Asset Growth), dilution (Net Share Issuance), plus a size control.</li>
+          </ul>
+
+        </section>
+
+        <section id="models-evaluation">
+          <h2>Models and evaluation</h2>
+          <ul>
+            <li>Models: L2/L1 logistic regression with scaling and class weighting, plus a Random Forest baseline (trees use passthrough scaling by design).</li>
+            <li>Splits: Expanding backtest via TimeSeriesSplit with 5 folds and approximately 36‑month test windows to respect time ordering.</li>
+            <li>Metrics and outputs: AUC per fold; out‑of‑fold predictions saved with date, ticker, y_true, y_prob, y_pred, fold, and model for downstream analysis.</li>
+          </ul>
+
+        </section>
+
+
+
+      <section>
+        <h2>Quick start</h2>
+        <pre><code># Editable install (recommended for development)
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+python -m pip install -U pip 
+pip install -e .
+
+# Refresh constituents and prices (test mode)
+python -m financial_ml --test -d info --newtable --newinfo
+
+# Fetch fundamentals (test mode shown)
+python -m financial_ml --test fundamentals
+
+# Train baseline models
+python -m financial_ml train
+</code></pre>
+        <ul class="contact-icons">
+          <li>For more information check the Setup and usage details in <a href="README.md">GitHub</a></li>
+        </ul>
+      </section>
+  </body>
+</div>
+<div class="container"><a href="index.html">← Back to Home</a></div>
+
+</html>
