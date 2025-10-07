@@ -161,3 +161,35 @@ ul.contact-icons li {
   text-decoration: none;
   margin: 0em 0;
 }
+/* Monospace font family for all code */
+pre, code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Block code */
+pre {
+  background: #0d1117;          /* dark background */
+  color: #c9d1d9;               /* light foreground */
+  border: 1px solid #30363d;    /* subtle border */
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: auto;               /* horizontal scroll when needed */
+  line-height: 1.5;
+  tab-size: 2;
+}
+
+/* Remove double background on nested code */
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+/* Inline code */
+code {
+  background: #161b22;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 0.15em 0.35em;
+}
