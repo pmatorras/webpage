@@ -1,28 +1,43 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About | Pablo Matorras-Cuevas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MacroEconomics Dashboard – Pablo Matorras</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+
 </head>
-<div class="cover-image"></div>
-<div class="container">
+  <div class="cover-image"></div>
 
-  <h1>Macro Economics</h1>
-    <ul>
-      <li>The MacroEconomics Dashboard is a lightweight tool that fetches, cleans, and visualizes key macro indicators—such as inflation and GDP—for selected countries using a reproducible Python workflow. Interactive Plotly/Dash charts let visitors explore trends and compare countries over time, with options to generate static HTML plots for fast embedding or run the full dynamic app on a hosting service. Designed for clarity and extension, it can be run locally to update data, export charts, or served as a live dashboard </li>
-      <li> More information available in the project documentation: <a href="https://github.com/pmatorras/MacroEconomics#readme" target="_blank"></li>
-    MacroEconomics (GitHub)   </ul> 
-    <iframe 
-    src="https://macroeconomics-22w4.onrender.com/" 
-    width="100%" 
-    height="800"
-    style="border:none;">
+<body>
+
+  <!-- Intro text -->
+  <section class="intro">
+    <h1>MacroEconomics Dashboard</h1>
+    <p>
+      The MacroEconomics Dashboard is a lightweight tool that fetches, cleans, and visualizes key macro indicators—
+      such as inflation and GDP—for selected countries using a reproducible Python workflow.
+      Interactive Plotly/Dash charts let visitors explore trends and compare countries over time, both in the form of a time series, as well as interactive maps
+      with options to generate static HTML plots for fast embedding or run the full dynamic app on a hosting service.
+      Designed for clarity and extension, it can be run locally to update data, export charts, or served as a live dashboard, as shown below.
+    </p>
+    <p>
+      For a more detailed information, please consult the project documentation in the
+      <a href="https://github.com/pmatorras/MacroEconomics/tree/dev" target="_blank">GitHub Repository</a>
+    </p>
+  </section>
+
+  <!-- Dashboard iframe below the intro -->
+  <div class="dashboard-container">
+    <iframe src="https://macroeconomics-22w4.onrender.com/" 
+            title="e"
+            allowfullscreen>
     </iframe>
+  </div>
 
 
-</div>
-<div class="container"><a href="index.html">← Back to Home</a></div>
+
+</body>
+<div class="intro"><a href="index.html">← Back to Home</a></div>
 
 </html>

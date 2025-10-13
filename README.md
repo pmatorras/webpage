@@ -17,15 +17,17 @@ A simple, fast personal website built with HTML/CSS and hosted on GitHub Pages, 
 - `index.html`: homepage with profile and links.
 - `assets/` or `css/`: styles and static assets.
 - `publications.html`: List the relevant publications
-- `publications.html`: List the talks given at conferences
+- `talks.html`: List the talks given at conferences
 - `macroeconomics.html`: Display  the [MacroEconomics](https://github.com/pmatorras/MacroEconomics) dashboard.
+- `financial-ml.html`: Describe the [financial-ml](https://github.com/pmatorras/financial-ml) repository.
 
 ## Local development
-No build step required—open `index.html` in a browser or serve with a simple HTTP server.
+No build step required. Just open `index.html` in a browser or serve with a simple HTTP server.
 
 ## Deployment (GitHub Pages)
+- Create your repository.
 - Push changes to the default branch and enable Pages in Settings → Pages, serving from the repository root or `/docs`. 
 - If using a custom domain, configure DNS (A/ALIAS or CNAME) and add a `CNAME` file in the repo.
 
 ## Embedding a live dashboard
-Add an iframe pointing to the hosted app:
+- Add an iframe pointing to the hosted app
