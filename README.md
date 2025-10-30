@@ -1,12 +1,8 @@
-
-### Suggested README.md
-
 # Personal Website
 
 A simple, fast personal website built with HTML/CSS and hosted on GitHub Pages, used to showcase projects, interactive dashboards, and contact information.
 
-## Live site
-- <htpps://pablo.matorras.com>
+[**Live site**](htpps://pablo.matorras.com): <htpps://pablo.matorras.com>
 
 ## Highlights
 - Clean, responsive static pages with no backend dependencies.
@@ -15,7 +11,7 @@ A simple, fast personal website built with HTML/CSS and hosted on GitHub Pages, 
 
 ## Project structure
 - `index.html`: homepage with profile and links.
-- `assets/` or `css/`: styles and static assets.
+- `assets/css/`: styles and static assets.
 - `publications.html`: List the relevant publications
 - `talks.html`: List the talks given at conferences
 - `macroeconomics.html`: Display  the [MacroEconomics](https://github.com/pmatorras/MacroEconomics) dashboard.
