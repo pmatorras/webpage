@@ -2,7 +2,7 @@
 
 A simple, fast personal website built with HTML/CSS and hosted on GitHub Pages, used to showcase projects, interactive dashboards, and contact information.
 
-[**Live site**](htpps://pablo.matorras.com): <htpps://pablo.matorras.com>
+[**Live site**](https://pablo.matorras.com/): <https://pablo.matorras.com/>
 
 ## Highlights
 - Clean, responsive static pages with no backend dependencies.
