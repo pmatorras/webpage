@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FootAI Dashboard – Pablo Matorras</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+</head>
+  <div class="cover-image"></div>
+
+<body>
+
+  <!-- Intro text -->
+  <section class="intro">
+    <h1>FootAI Dashboard</h1>
+    <p>
+        footAI is an end-to-end football analytics system that combines Elo rating calculations with machine learning to predict match outcomes across Europe's top five leagues. Built on historical data from 2015-2025 spanning Spain, Italy, England, Germany, and France, it features a reproducible Python workflow that downloads raw match data from football-data.co.uk, computes dynamic Elo rankings with multi-season decay and promotion/relegation transfers, engineers ML features (rolling statistics, odds movement, league context), and trains RandomForest models achieving <strong>50.5% accuracy on three-class prediction</strong> (home win, draw, away win) <strong>and 37.4% draw recall</strong> on tier-1 leagues (~8,000 test matches). The modular CLI supports multi-country training, temporal cross-validation, and automated result logging, with optional interactive Plotly visualizations and Dash dashboard deployment. Designed for transparency and extensibility, the pipeline handles data acquisition, feature engineering, model training, and evaluation in a single unified framework.
+    </p>
+    <p>
+      Please note that the dashboard may take a moment to load on first access, as it is hosted on a service with periodic initialization delays.
+    </p>
+    <p>
+      For a more detailed information, please consult the project documentation in the
+      <a href="https://github.com/pmatorras/FootAI/" target="_blank">GitHub Repository</a>
+    </p>
+  </section>
+
+  <!-- Dashboard iframe below the intro -->
+  <div class="dashboard-container">
+    <iframe src="https://footai-j05t.onrender.com/" 
+            title="e"
+            allowfullscreen>
+    </iframe>
+  </div>
+
+
+
+</body>
+<div class="intro"><a href="index.html">← Back to Home</a></div>
+
+</html>
