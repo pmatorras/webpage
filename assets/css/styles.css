@@ -308,3 +308,14 @@ code {
 .back-link:hover {
   color: #333;
 }
+
+/* Project Status Subtitle */
+.project-status {
+    display: block;             /* Forces it to its own line */
+    font-size: 0.85rem;         /* Smaller than body text */
+    text-transform: uppercase;  /* Makes it look like a label */
+    letter-spacing: 1.5px;      /* Adds elegance */
+    color: #888;                /* Neutral gray, matches everything */
+    margin-bottom: 5px;         /* Tight spacing to the main H1 */
+    font-weight: 600;
+}
