@@ -7,15 +7,24 @@ A simple, fast personal website built with HTML/CSS and hosted on GitHub Pages, 
 ## Highlights
 - Clean, responsive static pages with no backend dependencies.
 - Embedded interactive dashboards via iframe (e.g., [MacroEconomics](https://github.com/pmatorras/MacroEconomics) Dash app).
-- Links to data-science and ML projects, CV, and contact.
+- Portfolio of Data Science, NLP, and Financial Engineering projects.
+- Academic profile (publications & talks).
 
 ## Project structure
-- `index.html`: homepage with profile and links.
-- `assets/css/`: styles and static assets.
-- `publications.html`: List the relevant publications
-- `talks.html`: List the talks given at conferences
-- `macroeconomics.html`: Display  the [MacroEconomics](https://github.com/pmatorras/MacroEconomics) dashboard.
-- `financial-ml.html`: Describe the [financial-ml](https://github.com/pmatorras/financial-ml) repository.
+
+### Core
+- `index.html`: Homepage with bio, skills matrix, and featured projects.
+- `assets/`: Styles (`css/`) and images (`img/`, including optimized WebP assets).
+
+### Projects (`/projects/`)
+- `financial-sentiment.html`: Multi-task LLM architecture details & benchmarks.
+- `financial-ml.html`: Equity selection system methodology & results.
+- `footai.html`: Football match prediction system.
+- `macroeconomics.html`: Interactive Dash visualization wrapper.
+
+### Research (`/research/`)
+- `publications.html`: List of relevant physics & ML publications.
+- `talks.html`: Conference presentations and talks.
 
 ## Local development
 No build step required. Just open `index.html` in a browser or serve with a simple HTTP server.
@@ -25,5 +34,7 @@ No build step required. Just open `index.html` in a browser or serve with a simp
 - Push changes to the default branch and enable Pages in Settings → Pages, serving from the repository root or `/docs`. 
 - If using a custom domain, configure DNS (A/ALIAS or CNAME) and add a `CNAME` file in the repo.
 
-## Embedding a live dashboard
-- Add an iframe pointing to the hosted app
+## Technical Implementation
+- **Dashboards:** Hosted externally (Render/Heroku) and embedded via responsive iframes.
+- **Performance:** Assets optimized (WebP) to maintain high Lighthouse scores despite heavy iframes.
+
