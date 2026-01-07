@@ -1,8 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url> <loc>https://pablo.matorras.com/</loc> <lastmod>2025-10-07</lastmod> </url>
-<url> <loc>https://pablo.matorras.com/publications.html</loc> <lastmod>2025-10-04</lastmod> </url>
-<url> <loc>https://pablo.matorras.com/talks.html</loc> <lastmod>2025-10-04</lastmod> </url>
-<url> <loc>https://pablo.matorras.com/macroeconomics.html</loc> <lastmod>2025-10-04</lastmod> </url> </urlset>
-<url> <loc>https://pablo.matorras.com/financial-ml.html</loc> <lastmod>2025-10-07</lastmod> </url> </urlset>
-<url> <loc>https://pablo.matorras.com/footai.html</loc> <lastmod>2025-11-27</lastmod> </url> </urlset>
+  <!-- Main Home Page -->
+  <url>
+    <loc>https://pablo.matorras.com/</loc>
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- New NLP Project -->
+  <url>
+    <loc>https://pablo.matorras.com/financial-sentiment.html</loc>
+    <lastmod>2026-01-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Other Projects -->
+  <url>
+    <loc>https://pablo.matorras.com/financial-ml.html</loc>
+    <lastmod>2026-01-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pablo.matorras.com/macroeconomics.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pablo.matorras.com/footai.html</loc>
+    <lastmod>2025-11-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Research & Academic -->
+  <url>
+    <loc>https://pablo.matorras.com/publications.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pablo.matorras.com/talks.html</loc>
+    <lastmod>2025-10-04</lastmod>
+    <priority>0.6</priority>
+  </url>
+</urlset>
