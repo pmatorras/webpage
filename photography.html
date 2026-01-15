@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <title>Pablo Matorras-Cuevas | Photography</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <style>
+    /* Simple grid for photos */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .photo-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+    .photo-item img:hover {
+      transform: scale(1.02);
+    }
+    .caption {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<section id="photography">
+  <div class="container">
+    <a href="index.html">← Back to Home</a>
+    <h2>Travel Photography</h2>
+    <p>A selection of shots from my travels across 39 countries. Developing a visual eye helps me find patterns in data just as I find composition in chaos.</p>
+    
+    <div class="photo-grid">
+      <!-- Photo 1 -->
+      <div class="photo-item">
+        <!-- Replace 'path/to/image.jpg' with your actual image file paths -->
+        <img src="assets/img/photo1.jpg" alt="Description of photo">
+        <div class="caption">Solo backpacking in SE Asia (Sony a6100)</div>
+      </div>
+      
+      <!-- Photo 2 -->
+      <div class="photo-item">
+        <img src="assets/img/photo2.jpg" alt="Description of photo">
+        <div class="caption">Street photography in London</div>
+      </div>
+      
+      <!-- Photo 3 -->
+      <div class="photo-item">
+        <img src="assets/img/photo3.jpg" alt="Description of photo">
+        <div class="caption">Landscapes of Switzerland</div>
+      </div>
+      
+      <!-- Add more photo-items as needed -->
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
