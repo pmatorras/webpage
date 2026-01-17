@@ -387,19 +387,26 @@ code {
 
 
 .lightbox::before {
-  content: attr(data-caption); 
+  content: attr(data-caption);
   position: absolute;
   bottom: 30px;
-  left: 0;
+  left: 10vw;
   width: 100%;
   text-align: center;
   color: white;
-  font-size: 1.5rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 500;
   text-shadow: 0 2px 4px rgba(0,0,0,0.9);
   pointer-events: none;
-  z-index: 10000; 
+  z-index: 10000;
+  background: rgba(58, 64, 141, 0.1);  
+  padding: 1rem 1rem;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);  
+  max-width: 78vw;
+  margin: 0 auto;
 }
+
 
 .lightbox img {
   width: auto;              
@@ -409,7 +416,7 @@ code {
   max-width: 90vw;          
   max-height: 90vh;         
   
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 0 #0425e080;
   border-radius: 4px;
 }
 
