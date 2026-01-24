@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/header.html', false);
+    xhr.send();
+    document.write(xhr.responseText);
+  </script>
+  
+  <!-- Page-specific meta -->
+  <title>FootAI Dashboard - Pablo Matorras</title>
   <meta property="og:title" content="footAI: Predictive Sports Analytics Engine (Deployed)" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://pablo.matorras.com/projects/footai.html" />
-  <meta property="og:image" content="https://pablo.matorras.com/assets/img/projects/footai_thumbnail.png" />
-  <title>FootAI Dashboard - Pablo Matorras</title>
+  <meta property="og:image" content="https://pablo.matorras.com/assets/img/projects/footai_thumbnail.webp" />
   <meta property="og:description" content="Production-grade ML system with automated ETL, Elo ratings, and live Dash visualisation. Built with Python, SQL, and AWS." />
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
-  <link rel="shortcut icon" href="../assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
   <div class="cover-image"></div>
 
 <body>
@@ -61,6 +63,14 @@
 
 
 </body>
-<div class="intro"><a href="../index.html">← Back to Home</a></div>
+<div id="footer-placeholder"></div>
 
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+</body>
 </html>
