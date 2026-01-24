@@ -2,22 +2,24 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title> Publications | Pablo Matorras-Cuevas</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
-  <link rel="shortcut icon" href="../assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-    apple-touch-icon.png">
-  <meta property="og:title" content="Publications Summary" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://pablo.matorras.com/projects/talks.html" />
-  <meta property="og:image" content="https://pablo.matorras.com/assets/img/favicon.ico" />
-  <meta property="og:description" content="Publications summary." />
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/header.html', false);
+    xhr.send();
+    document.write(xhr.responseText);
+  </script>
+  
+  <!-- Page-specific meta -->
+  <title>Publications | Pablo Matorras-Cuevas</title>
+  <meta property="og:title" content="Publications & Citation Metrics (h-index 59)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pablo.matorras.com/publications.html" />
+  <meta property="og:image" content="https://pablo.matorras.com/assets/img/publications_thumbnail.webp" />
+  <meta property="og:description" content="h-index 59 | 12,520 citations across 356 CMS publications" />
 </head>
+
+<h1 class="section-title">Publications</strong></h1>
 <div class="cover-image"></div>
-<h1><strong>Publications</strong></h1>
 
 <div class="container">
   <h2>Citation metrics</h2>
@@ -61,10 +63,6 @@
           target="_blank">
           Official CMS PAS page (preliminary results)
         </a>
-        <br>
-        <span style="color:#444;">
-          <!--This study searched for supersymmetric particle pair production using the full Run 2 CMS dataset (138 fb<sup>−1</sup>). No excess above Standard Model predictions was observed. Exclusion limits were set on chargino and slepton masses, reaching up to 1100 GeV (charginos), 480 GeV (neutralinos), 700 GeV (sleptons), and 360 GeV (neutralinos from slepton production).-->
-        </span>
       </li>
       <h3> Conference Proceedings </h3>
       <ul>
@@ -91,6 +89,14 @@
   </section>
 </div>
 
-<div class="container"><a href="../index.html">← Back to Home</a></div>
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 
 </html>

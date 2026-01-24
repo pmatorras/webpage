@@ -2,27 +2,27 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Talks | Pablo Matorras-Cuevas</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
-  <link rel="shortcut icon" href="../assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-  apple-touch-icon.png">
-  <meta property="og:title" content="Selected talks" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://pablo.matorras.com/projects/talks.html" />
-  <meta property="og:image" content="https://pablo.matorras.com/assets/img/favicon.ico" />
-  <meta property="og:description" content="Selected talks." />
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/header.html', false);
+    xhr.send();
+    document.write(xhr.responseText);
+  </script>
+  
+  <!-- Page-specific meta -->
+  <title>Talks & Presentations | Pablo Matorras-Cuevas</title>
+  <meta property="og:title" content="International Conference Presentations" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pablo.matorras.com/talks.html" />
+  <meta property="og:image" content="https://pablo.matorras.com/assets/img/talks_thumbnail.webp" />
+  <meta property="og:description" content="8+ international conference presentations representing CMS at ICHEP, SUSY, DIS" />
 </head>
+
 <div class="cover-image"></div>
+
+<h1 class="section-title">List of talks presented at conferences</h1>
+
 <div class="container">
-
-  <h1>List of talks presented at conferences</h1>
-  I have presented the following talks in international conferences:
-
   <ul>
     <li>
       <strong>SUSY searches in ATLAS and CMS</strong><br>
@@ -89,6 +89,14 @@
     </li>
   </ul>
 </div>
-<div class="container"><a href="../index.html">← Back to Home</a></div>
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 
 </html>

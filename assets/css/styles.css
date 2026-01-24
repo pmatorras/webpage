@@ -18,6 +18,17 @@ body {
   }
 }
 
+.section-title {
+  background: #f7f7f7;
+  padding: 0.5em 0.5em 0.5em;
+  margin-top: 3em;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+
 .container {
   max-width: 800px;
   margin: 40pt auto;
@@ -119,7 +130,7 @@ ul.about-icons li a {
 }
 h1 {
   text-align: center;
-  color: #2980b9;  /* Matches strong; boldest title */
+  color: #1e3a8a;  /* Matches strong; boldest title */
   font-weight: 700;
   text-shadow: 4px 4px 4px rgba(0,0,0,0.08);
 }

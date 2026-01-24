@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta charset="UTF-8">
+  <script>
+    // Load common header synchronously so styles load first
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'header.html', false);
+    xhr.send();
+    document.write(xhr.responseText);
+  </script>
+  
+  <!-- Page-specific meta after -->
   <title>Pablo Matorras-Cuevas | Personal Page</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
-  <link rel="shortcut icon" href="assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <meta property="og:title" content="Personal Portfolio" />
+  <meta property="og:image" content="https://pablo.matorras.com/assets/img/cover-image.jpg" />
 </head>
-<section id="about">
+<body>
 
-  <body>
-    <!-- At the top of your <body> -->
-    <div class="cover-image"></div>
-    <div class="container">
+  <div class="cover-image"></div>
+  <div class="container">
       <img src="assets/img/profile.webp" alt="Photo of me" class="profile-img">
       <h1>Pablo Matorras-Cuevas</h1>
       <p>¡Hola! I'm Pablo Matorras-Cuevas, a data scientist with a PhD in particle physics. I have a passion for turning
@@ -29,6 +30,7 @@
         <li><a href="#work-experience">Work Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#scientific-production">Scientific Production</a></li>
+        <li><a href="photography.html"> Photography </a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -71,8 +73,6 @@
       <a href="photography.html"><img src="assets/img/gallery/elnido_sunset.webp" alt="El Nido sunset" style="width:100%;border-radius:4px;height:auto;" loading="lazy"></a>
       <a href="photography.html"><img src="assets/img/cover-image.webp" alt="Sunrise over the Komodo National Park, Indonesia." style="width:100%;border-radius:4px;height:auto;" loading="lazy"></a>
     </div>
-
-
   </div>
 
 </section>
@@ -277,34 +277,14 @@ machine learning, and quantum computing:</p>
   </div>
 </section>
 
+<div id="footer-placeholder"></div>
 
-
-
-<div class="container">
-  <section id="contact">
-    <h2>Contact</h2>
-    <p style="text-align: center;">Feel free to reach out via email or connect on LinkedIn and GitHub.</p>
-    <ul class="contact-icons">
-      <li>
-        <a href="mailto:pablo.matorras@gmail.com" title="Email">
-          <i class="fa fa-envelope"></i> pablo(dot)matorras(at)gmail.com
-        </a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/pablo-matorras/" target="_blank" title="LinkedIn">
-          <i class="fa fa-linkedin"> </i> pablo-matorras
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/pmatorras" target="_blank" title="GitHub">
-          <i class="fa fa-github"></i> pmatorras
-        </a>
-      </li>
-    </ul>
-  </section>
-</div>
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 </body>
-
-<div class="container backtop"><a href="#top">↑ Back to Top</a></div>
-
 </html>

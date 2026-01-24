@@ -2,19 +2,22 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title> Financial-Sentiment-LLM | Pablo Matorras</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
-    <link rel="shortcut icon" href="../assets/img/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
-    <meta property="og:title" content="Financial Sentiment LLM (85% Accuracy)" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://pablo.matorras.com/projects/finsentiment.html" />
-    <meta property="og:image" content="https://pablo.matorras.com/assets/apple-touch-icon" />
-    <meta property="og:description" content="Fine-tuned Multi-Task FinBERT on News/Social/FiQA data. Dual-head architecture (Classification + Regression) achieving 85% accuracy." />
-    <link rel="stylesheet" href="../assets/css/styles.css">
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/header.html', false);
+    xhr.send();
+    document.write(xhr.responseText);
+  </script>
+  
+  <!-- Page-specific meta -->
+  <title>Financial-Sentiment-LLM | Pablo Matorras</title>
+  <meta property="og:title" content="Financial Sentiment LLM (85% Accuracy)" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://pablo.matorras.com/projects/finsentiment.html" />
+  <meta property="og:image" content="https://pablo.matorras.com/assets/img/thumbnails/finsentiment_thumbnail.webp" />
+  <meta property="og:description" content="Fine-tuned Multi-Task FinBERT on News/Social/FiQA data. Dual-head architecture (Classification + Regression) achieving 85% accuracy." />
 </head>
+
 <div class="cover-image"></div>
 <div class="container">
     <span class="project-status"> Status: Phase 2 Complete - Model Optimisation </span>
@@ -76,7 +79,7 @@
             src="https://pmatorras-financial-sentiment-demo.hf.space"
             frameborder="0"
             width="100%"
-            height="500"
+            height="600"
             style="display: block;"
         ></iframe>
     </div>
@@ -153,9 +156,9 @@
     <h2>Project Roadmap</h2>
     <p>This project is being developed in three phases:</p>
     <ul>
-        <li>✅ <strong>Phase 1: Baseline</strong> – Established single-task benchmarks (Completed Dec 2025).</li>
-        <li>✅ <strong>Phase 2: Optimisation</strong> – Implemented Multi-Task architecture and LoRA (Completed Jan 22, 2026).</li>
-        <li>🔄 <strong>Phase 3: Integration (Current)</strong> – Deploying sentiment scores as features into the <a href="financial-ml.html">Financial-ML Equity Selection System</a>.</li>
+        <li>✅ <strong>Phase 1: Baseline</strong> - Established single-task benchmarks (Completed Dec 2025).</li>
+        <li>✅ <strong>Phase 2: Optimisation</strong> - Implemented Multi-Task architecture and LoRA (Completed Jan 22, 2026).</li>
+        <li>🔄 <strong>Phase 3: Integration (Current)</strong> - Deploying sentiment scores as features into the <a href="financial-ml.html">Financial-ML Equity Selection System</a>.</li>
     </ul>
 
   </br>
@@ -187,6 +190,13 @@ python app.py  # Opens at localhost:7860</code></pre>
   </body>
 </div>
 
-<div class="container"><a href="../index.html" class="back-link">← Back to Home</a></div>
+<div id="footer-placeholder"></div>
 
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
 </html>

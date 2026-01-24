@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <meta charset="UTF-8">
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/header.html', false);
+    xhr.send();
+    document.write(xhr.responseText);
+  </script>
+  
+  <!-- Page-specific meta -->
   <title>Pablo Matorras-Cuevas | Photography</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16x16.png">
-  <link rel="shortcut icon" href="../assets/img/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
   <meta property="og:title" content="Selected travel photographs" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://pablo.matorras.com/photography.html" />
   <meta property="og:image" content="https://pablo.matorras.com/assets/img/cover-image.jpg" />
-  <meta property="og:description" content="Selected travel photographs." />
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta property="og:description" content="Selected travel photographs from 39 countries." />
 </head>
+
 <body>
 <div class="cover-image">
 </div>
 
 <section id="photography">
   <div class="container">
-    <h1>Travel Photography</h1>
+    <h1><strong>Travel Photography</strong></h1>
     <div class="intro-abstract" style="max-width: 0.7hw; margin: 40px 10px 10px; padding: 0 5%; text-align: center; font-size: 1.1em; line-height: 1.3;">
       <p>Since first using Python during my UCL London exchange, as I've improved my data analysis skills, I've also developed a taste for photographing the 39 countries I've visited. Below is a selection.<p>
     </div>
@@ -149,16 +151,21 @@
             <img src="assets/img/gallery/cern_sunset.webp" alt="CERN's views from R1">
         </a>
       </div>
-
-      <div class="photo-item">
-        <a href="index.html" class="back-link">← Back to Home</a>
-      </div>
-
-
     </div>
 </section>
 
 </body>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+
 
 
 </html>
