@@ -256,13 +256,26 @@ machine learning, and quantum computing:</p>
     
     <h3><a href="research/publications.html">Publications</a></h3>
     <p>
-      h-index: 59 | 12,520 citations across 356 citable papers with average 39 citations per paper. Contributions include PhD thesis on supersymmetric particle searches, CMS Public Analysis Summary (SUS-23-002), and peer-reviewed conference proceedings. Full profiles available on InspireHEP 
-      and Google Scholar.
+      h-index: <span id="h-index-main">59</span> | <span id="citations-main">12,520</span> citations across <span id="papers-main">356</span> citable papers with average <span id="avg-main">39</span> citations per paper. Contributions include PhD thesis on supersymmetric particle searches, CMS Public Analysis Summary (SUS-23-002), and peer-reviewed conference proceedings. Full profiles available on InspireHEP and Google Scholar.
     </p>
   </div>
 </section>
 
 <div id="footer-placeholder"></div>
+
+<script>
+  fetch('data/citations.json')
+    .then(response => response.json())
+    .then(data => {
+      const format = (num) => num.toLocaleString('en-US');
+      
+      document.getElementById('h-index-main').textContent = data.h_index;
+      document.getElementById('citations-main').textContent = format(data.citations_citable);
+      document.getElementById('papers-main').textContent = format(data.papers_citable);
+      document.getElementById('avg-main').textContent = data.avg_citations_citable;
+    })
+    .catch(error => console.error('Error loading citation data:', error));
+</script>
 
 <script>
   fetch('footer.html')
