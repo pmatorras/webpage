@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/header.html', false);
+        xhr.send();
+        document.write(xhr.responseText);
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteomat - Weather Forecast Dashboard | Pablo Matorras</title>
+    <meta name="description" content="Interactive weather dashboard with probabilistic forecasting and ensemble uncertainty visualization">
+    <!-- Add your CSS links here matching finsentiment.html -->
+</head>
+<div class="cover-image"></div>
+<div class="container">
+    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation </span>
+    </span>
+  <header class="hero">
+    <h1>Meteomat: Weather Forecast Dashboard</h1>
+  </header>
+<body>
+    <!-- Add your navigation header here -->
+
+    <main class="project-content">
+        
+        <div class="project-links">
+            <a href="https://meteo.matorras.com" target="_blank" class="btn-primary">🌦️ Launch Dashboard</a>
+            <a href="https://github.com/pmatorras/meteomat" target="_blank" class="btn-secondary"> <i class="fa fa-github"></i> GitHub Repository</a>
+            <a href="https://huggingface.co/spaces/pmatorras/meteomat" target="_blank" class="btn-secondary">🤗 HF Space</a>
+        </div>
+
+        <section class="overview">
+        <p><br>
+            Standard weather apps hide forecast uncertainty by showing single-value predictions, leaving users unsure about forecast reliability. <strong>Meteomat</strong> addresses this by visualizing ECMWF ensemble forecasts with probabilistic confidence ranges—answering <b>"how confident is this forecast?"</b> instead of just <b>"what's the forecast?"</b> Built as an interactive dashboard with global coverage (focused primarily on Europe), the application is served through Cloudflare at <a href="https://meteo.matorras.com" target="_blank">meteo.matorras.com</a> and deployed on Hugging Face Spaces with automatic fallback mechanisms.
+        </p>
+
+
+        </section>
+
+        <section class="features-table">
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Ensemble Uncertainty:</strong> 10th/50th/90th percentile bands from 51 ECMWF ensemble members</li>
+            <li><strong>Multi-Variable Forecasts:</strong> Temperature, rainfall, wind speed/direction, humidity</li>
+            <li><strong>Interactive Map:</strong> Click any European location or search by city name</li>
+            <li><strong>7-Day Horizon:</strong> Hourly resolution forecasts</li>
+            <li><strong>Custom Visualizations:</strong> Plotly with JavaScript theming and smart tick generation</li>
+        </ul>
+
+        <section class="architecture"><br>
+        <h2>Technical Architecture</h2>
+        <p>
+            <strong>Data Pipeline:</strong> Real-time ECMWF IFS ensemble forecasts are fetched via the <a href="https://open-meteo.com" target="_blank">Open-Meteo API</a> based on user-selected coordinates, 
+            processed to extract percentiles (10th/50th/90th) from 51 ensemble members, and rendered as interactive 
+            Plotly charts with custom JavaScript theming in Streamlit.
+        </p>
+        <p>
+            <strong>Custom JavaScript Integration:</strong>Implemented <code>smart_ticks.js</code> for dynamic x-axis formatting that adapts tick intervals to zoom level 
+            (hourly < 24hrs, daily > 5 days), automatically detects Streamlit themes, and enforces axis constraints 
+            to prevent zooming beyond data bounds.
+        </p>
+        <table class="features-table">
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Frontend</strong></td>
+                    <td>Streamlit + Plotly</td>
+                    <td>Interactive dashboard with custom visualizations</td>
+                </tr>
+                <tr>
+                    <td><strong>Data Source</strong></td>
+                    <td>Open-Meteo API</td>
+                    <td>ECMWF IFS Ensemble forecasts</td>
+                </tr>
+                <tr>
+                    <td><strong>Hosting</strong></td>
+                    <td>Hugging Face Spaces</td>
+                    <td>Docker-based deployment with automatic builds</td>
+                </tr>
+                <tr>
+                    <td><strong>Domain & CDN</strong></td>
+                    <td>Cloudflare</td>
+                    <td>Custom domain routing with fallback mechanism</td>
+                </tr>
+                <tr>
+                    <td><strong>Geocoding</strong></td>
+                    <td>OpenStreetMap Nominatim</td>
+                    <td>City name → coordinates lookup</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <section class="development">
+        <br>
+        <h2>Development Phases</h2>
+        <p>
+            <strong>Phase 1: Europe Ensemble Visualization</strong> ✅ <em>Completed February 2026</em><br>
+            Built complete data pipeline from ECMWF API integration through interactive map interface to production deployment on HF Spaces with custom domain and Cloudflare routing.
+        </p>
+
+        <p>
+            <strong>Phase 2: ML-Enhanced Downscaling</strong> 🚧 <em>Planned</em><br>
+            <ul>
+                <li>
+                    Calculate station-based corrections for Spain using <b>CNN models</b> trained on historical ECMWF forecasts and AEMET observations.
+                </li>
+                <li>
+                    Split training into regions: North Coast, Mediterranean, Pyrenees, Sierra Nevada, Sistema Central. 
+                </li>
+                <li>
+                    Resolution expected to improve from ~9km to <b>hyperlocal forecasts</b>, particularly in mountainous areas.
+                </li>
+            </ul> 
+            
+        </p>
+        </section>
+
+        <section class="setup">
+            <h2>Quick Start</h2>
+
+            <pre><code># Clone and setup
+git clone https://github.com/pmatorras/meteomat.git
+cd meteomat
+pip install -r requirements.txt
+
+# Run locally (localhost:8051)
+streamlit run src/meteomat/app.py</code></pre>
+
+        </section>
+
+
+    </main>
+
+    <!-- Add your footer here -->
+</body>
+</div>
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+</html>
