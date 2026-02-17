@@ -220,7 +220,6 @@ code {
   color: #e6edf3;
   border: 1px solid #30363d;
   border-radius: 4px;
-  padding: 0.15em 0.35em;
 }
 
 
@@ -498,3 +497,16 @@ h3 {
   font-weight: 600;
 }
 
+.project-links {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+}
+
+.project-links a {
+    flex: 1; /* Makes each link take equal width */
+    text-align: center;
+}
+.btn-secondary .fa-github {
+    color: #333;
+}
