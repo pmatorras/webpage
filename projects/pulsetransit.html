@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '/header.html', false);
+        xhr.send();
+        document.write(xhr.responseText);
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseTransit - Tus Santander tracker | Pablo Matorras-Cuevas</title>
+    <meta name="description" content="Real-time data pipeline for TUS (Transportes Urbanos de Santander) bus network. Collects live vehicle positions and stop-level ETA predictions to build a historical dataset for delay analysis and ML-based prediction.">
+    <!-- Add your CSS links here matching finsentiment.html -->
+</head>
+<div class="cover-image"></div>
+<div class="container">
+    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation </span>
+    </span>
+  <header class="hero">
+    <h1>Meteomat: Weather Forecast Dashboard</h1>
+  </header>
+<body>
+    <!-- Add your navigation header here -->
+
+    <main class="project-content">
+        
+        <div class="project-links">
+            <a href="https://tustracker.matorras.com" target="_blank" class="btn-primary">🚌 Launch Dashboard</a>
+            <a href="https://github.com/pmatorras/pulsetransit" target="_blank" class="btn-secondary"> <i class="fa fa-github"></i> GitHub Repository</a>
+            <a href="https://huggingface.co/spaces/pmatorras/pulsetransit" target="_blank" class="btn-secondary">🤗 HF Space</a>
+        </div>
+
+        <section class="overview">
+        <p><br>
+            <strong>PulseTransit</strong> collects and archives real-time data from Santander's TUS bus network to enable delay analysis and predictive modeling. Currently, the project provides a live dashboard showing scheduled routes and stops, with automated data collection running in the background. Future development will integrate <b>real-time vehicle positions</b> and ETA predictions into the dashboard, ultimately training <b>ML models</b> to improve upon official arrival estimates.
+        </p>
+
+
+        </section>
+
+    <section class="features-table">
+        <h2>Key Features</h2>
+        <ul>
+            <li><strong>Real-Time Collection:</strong> 2-minute ETA updates and hourly GPS positions via Cloudflare Workers</li>
+            <li><strong>GTFS Integration:</strong> Route geometries, stop metadata, and scheduled timetables from NAP</li>
+            <li><strong>Interactive Map:</strong> Live vehicle positions with route shapes and stop-level predictions</li>
+            <li><strong>Historical Dataset:</strong> Deduplicated estimaciones and posiciones stored in Cloudflare D1</li>
+            <li><strong>Delay Analytics:</strong> Framework for computing predicted vs. actual arrival deviations</li>
+        </ul>
+    </section>
+
+
+
+        <section class="development">
+        <br>
+        <h2>Development Phases</h2>
+        <p>
+            <strong>Phase 1: Data Collection Infrastructure</strong> ✅ <em>Completed February 2026</em><br>
+            Automated pipeline collecting real-time GPS positions and ETA predictions via Cloudflare Workers, storing deduplicated data in D1 with GTFS static feed integration for route geometries and stop metadata.
+        </p>
+
+        <p>
+            <strong>Phase 2: Live Dashboard</strong> ✅ <em>Completed February 2026</em><br>
+            Interactive map visualization showing scheduled routes, stops, and service patterns with custom domain deployment on Hugging Face Spaces.
+        </p>
+
+        <p>
+            <strong>Phase 3: Real-Time Integration</strong> 🚧 <em>In Progress</em><br>
+            <ul>
+                <li>Display live vehicle positions on map with route matching</li>
+                <li>Show real-time ETA predictions at stop level</li>
+                <li>Compute and visualize delays (predicted vs. scheduled arrival)</li>
+            </ul>
+        </p>
+
+        <p>
+            <strong>Phase 4: ML-Enhanced Predictions</strong> 📋 <em>Acquiring training data</em><br>
+            <ul>
+                <li>Train models on historical GPS + ETA data to predict arrival times</li>
+                <li>Integrate weather features from Meteomat for delay forecasting</li>
+                <li>Compare ML predictions against official TUS estimates</li>
+            </ul>
+        </p>
+
+
+        <section class="setup">
+            <h2>Quick Start</h2>
+
+            <pre><code># Clone and setup
+git clone https://github.com/pmatorras/pulsetransit.git
+cd pulsetransit
+pip install -e . 
+
+# Run locally (localhost:8051)
+streamlit run src/pulsetransit/dashboard/app.py</code></pre>
+
+        </section>
+
+
+    </main>
+
+    <!-- Add your footer here -->
+</body>
+</div>
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('../footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    });
+</script>
+</html>
