@@ -17,13 +17,15 @@
   </url>
   
   <!-- Projects -->
-  <loc>https://pablo.matorras.com/projects/meteomat.html</loc>
+  <url>
+    <loc>https://pablo.matorras.com/projects/meteomat.html</loc>
     <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
-   <loc>https://pablo.matorras.com/projects/pulsetransit.html</loc>
+  
+  <url>
+    <loc>https://pablo.matorras.com/projects/pulsetransit.html</loc>
     <lastmod>2026-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
