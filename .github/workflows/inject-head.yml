@@ -1,0 +1,26 @@
+name: Inject shared head tags
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "header.js"
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run inject script
+        run: python scripts/inject_head.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "ci: sync common head tags from header.js"
+          git push
