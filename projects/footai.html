@@ -25,17 +25,18 @@
   <meta property="og:description" content="Production-grade ML system with automated ETL, Elo ratings, and live Dash visualisation. Built with Python, SQL, and AWS.">
 </head>
 
+<body>
+
   <div class="cover-image"></div>
 
-<body>
+
 
   <section class="intro">
     <h1>FootAI Dashboard</h1>
   <p>
       <strong>footAI</strong> is a production-grade analytics engine that combines dynamic Elo ratings with machine learning to predict football match outcomes. The system operates an automated pipeline processing 10 years of data (2015-2025) across Europe's top 5 leagues, handling data ingestion, feature engineering, and model deployment in a unified framework.
   </p>
-
-  <h3>Core Capabilities</h3>
+  <h2>Core Capabilities</h2>
   <ul style="list-style-type: square; padding-left: 20px; margin-top: 10px;">
       <li style="margin-bottom: 10px;">
           <strong>Predictive Performance:</strong> Achieves <strong>50.5% Accuracy</strong> (3-class) and <strong>37.4% Draw Recall</strong> on Tier-1 leagues (~8k test matches) using optimised Random Forest models.
@@ -68,17 +69,14 @@
     </iframe>
   </div>
 
+  <div id="footer-placeholder"></div>
 
-
-</body>
-<div id="footer-placeholder"></div>
-
-<script>
-  fetch('../footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
+  <script>
+    fetch('../footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
 </html>

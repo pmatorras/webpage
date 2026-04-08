@@ -15,23 +15,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/header.js"></script>
     <link rel="canonical" href="https://pablo.matorras.com/projects/pulsetransit.html">
-    <meta name="description" content="Real-time data pipeline for TUS (Transportes Urbanos de Santander) bus network. Collects live vehicle positions and stop-level ETA predictions to build a historical dataset for delay analysis and ML-based prediction..">
-
     <title>PulseTransit - Tus Santander tracker | Pablo Matorras-Cuevas</title>
     <meta name="description" content="Real-time data pipeline for TUS (Transportes Urbanos de Santander) bus network. Collects live vehicle positions and stop-level ETA predictions to build a historical dataset for delay analysis and ML-based prediction.">
     <meta property="og:title" content="PulseTransit - Tus Santander tracker | Pablo Matorras-Cuevas">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pablo.matorras.com/projects/pulsetransit.html">
     <meta property="og:image" content="https://tustracker.matorras.com/preview.jpg">
-    <meta property="og:description" content="Real-time data pipeline for TUS (Transportes Urbanos de Santander) bus network. Collects live vehicle positions and stop-level ETA predictions to build a historical dataset for delay analysis and ML-based prediction.."></head>
-<div class="cover-image"></div>
-<div class="container">
-    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation </span>
+    <meta property="og:description" content="Real-time data pipeline for TUS (Transportes Urbanos de Santander) bus network. Collects live vehicle positions and stop-level ETA predictions to build a historical dataset for delay analysis and ML-based prediction..">
+</head>
+<body>
+    <div class="cover-image"></div>
+    <div class="container">
+    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation
     </span>
   <header class="hero">
     <h1>Meteomat: Weather Forecast Dashboard</h1>
   </header>
-<body>
+
     <!-- Add your navigation header here -->
 
     <main class="project-content">
@@ -42,13 +42,13 @@
             <a href="https://huggingface.co/spaces/pmatorras/pulsetransit" target="_blank" class="btn-secondary">🤗 HF Space</a>
         </div>
 
-        <section class="overview">
+        <div class="overview">
         <p><br>
             <strong>PulseTransit</strong> collects and archives real-time data from Santander's TUS bus network to enable delay analysis and predictive modeling. Currently, the project provides a live dashboard showing scheduled routes and stops, with automated data collection running in the background. Future development will integrate <b>real-time vehicle positions</b> and ETA predictions into the dashboard, ultimately training <b>ML models</b> to improve upon official arrival estimates.
         </p>
 
 
-        </section>
+        </div>
 
     <section class="features-table">
         <h2>Key Features</h2>
@@ -64,36 +64,37 @@
 
 
         <section class="development">
-        <br>
-        <h2>Development Phases</h2>
-        <p>
-            <strong>Phase 1: Data Collection Infrastructure</strong> ✅ <em>Completed February 2026</em><br>
-            Automated pipeline collecting real-time GPS positions and ETA predictions via Cloudflare Workers, storing deduplicated data in D1 with GTFS static feed integration for route geometries and stop metadata.
-        </p>
+            <br>
+            <h2>Development Phases</h2>
+            <p>
+                <strong>Phase 1: Data Collection Infrastructure</strong> ✅ <em>Completed February 2026</em><br>
+                Automated pipeline collecting real-time GPS positions and ETA predictions via Cloudflare Workers, storing deduplicated data in D1 with GTFS static feed integration for route geometries and stop metadata.
+            </p>
 
-        <p>
-            <strong>Phase 2: Live Dashboard</strong> ✅ <em>Completed February 2026</em><br>
-            Interactive map visualization showing scheduled routes, stops, and service patterns with custom domain deployment on Hugging Face Spaces.
-        </p>
+            <p>
+                <strong>Phase 2: Live Dashboard</strong> ✅ <em>Completed February 2026</em><br>
+                Interactive map visualization showing scheduled routes, stops, and service patterns with custom domain deployment on Hugging Face Spaces.
+            </p>
 
-        <p>
-            <strong>Phase 3: Real-Time Integration</strong> 🚧 <em>In Progress</em><br>
+            <p>
+                <strong>Phase 3: Real-Time Integration</strong> 🚧 <em>In Progress</em><br>
+            </p>
             <ul>
                 <li>Display live vehicle positions on map with route matching</li>
                 <li>Show real-time ETA predictions at stop level</li>
                 <li>Compute and visualize delays (predicted vs. scheduled arrival)</li>
             </ul>
-        </p>
 
-        <p>
-            <strong>Phase 4: ML-Enhanced Predictions</strong> 📋 <em>Acquiring training data</em><br>
+
+            <p>
+                <strong>Phase 4: ML-Enhanced Predictions</strong> 📋 <em>Acquiring training data</em><br>
+            </p>
             <ul>
                 <li>Train models on historical GPS + ETA data to predict arrival times</li>
                 <li>Integrate weather features from Meteomat for delay forecasting</li>
                 <li>Compare ML predictions against official TUS estimates</li>
             </ul>
-        </p>
-
+        </section>
 
         <section class="setup">
             <h2>Quick Start</h2>
@@ -107,20 +108,17 @@ pip install -e .
 streamlit run src/pulsetransit/dashboard/app.py</code></pre>
 
         </section>
-
-
     </main>
+    </div>
 
-    <!-- Add your footer here -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+    fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
 </body>
-</div>
-<div id="footer-placeholder"></div>
-
-<script>
-  fetch('../footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
 </html>
