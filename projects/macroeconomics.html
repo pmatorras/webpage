@@ -25,11 +25,8 @@
   <meta property="og:description" content="Interactive global economic dashboard visualizing IMF data. Features automated data pipelines, geospatial analysis, and live Dash deployment.">
 </head>
 
-
-  <div class="cover-image"></div>
-
 <body>
-
+  <div class="cover-image"></div>
   <!-- Intro text -->
   <section class="intro">
     <h1>MacroEconomics Dashboard</h1>
@@ -55,16 +52,14 @@
     </iframe>
   </div>
 
+  <div id="footer-placeholder"></div>
 
-
+  <script>
+    fetch('../footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
 </body>
-<div id="footer-placeholder"></div>
-
-<script>
-  fetch('../footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
 </html>

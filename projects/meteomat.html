@@ -15,7 +15,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/header.js"></script>
     <link rel="canonical" href="https://pablo.matorras.com/projects/meteomat.html">
-    <meta name="description" content="Interactive weather dashboard with probabilistic forecasting and ensemble uncertainty visualization.">
 
     <title>Meteomat - Weather Forecast Dashboard | Pablo Matorras-Cuevas</title>
     <meta name="description" content="Interactive weather dashboard with probabilistic forecasting and ensemble uncertainty visualization.">
@@ -25,14 +24,15 @@
     <meta property="og:image" content="https://meteo.matorras.com/preview.jpg">
     <meta property="og:description" content="Interactive weather dashboard with probabilistic forecasting and ensemble uncertainty visualization.">
 </head>
+<body>
 <div class="cover-image"></div>
 <div class="container">
-    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation </span>
+    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation
     </span>
   <header class="hero">
     <h1>Meteomat: Weather Forecast Dashboard</h1>
   </header>
-<body>
+
     <!-- Add your navigation header here -->
 
     <main class="project-content">
@@ -43,13 +43,13 @@
             <a href="https://huggingface.co/spaces/pmatorras/meteomat" target="_blank" class="btn-secondary">🤗 HF Space</a>
         </div>
 
-        <section class="overview">
+        <div class="overview">
         <p><br>
             Standard weather apps hide forecast uncertainty by showing single-value predictions, leaving users unsure about forecast reliability. <strong>Meteomat</strong> addresses this by visualizing ECMWF ensemble forecasts with probabilistic confidence ranges—answering <b>"how confident is this forecast?"</b> instead of just <b>"what's the forecast?"</b> Built as an interactive dashboard with global coverage (focused primarily on Europe), the application is served through Cloudflare at <a href="https://meteo.matorras.com" target="_blank">meteo.matorras.com</a> and deployed on Hugging Face Spaces with automatic fallback mechanisms.
         </p>
 
 
-        </section>
+        </div>
 
         <section class="features-table">
         <h2>Key Features</h2>
@@ -60,6 +60,7 @@
             <li><strong>7-Day Horizon:</strong> Hourly resolution forecasts</li>
             <li><strong>Custom Visualizations:</strong> Plotly with JavaScript theming and smart tick generation</li>
         </ul>
+        </section>
 
         <section class="architecture"><br>
         <h2>Technical Architecture</h2>
@@ -70,7 +71,7 @@
         </p>
         <p>
             <strong>Custom JavaScript Integration:</strong>Implemented <code>smart_ticks.js</code> for dynamic x-axis formatting that adapts tick intervals to zoom level 
-            (hourly < 24hrs, daily > 5 days), automatically detects Streamlit themes, and enforces axis constraints 
+            (hourly &lt; 24hrs, daily &gt; 5 days), automatically detects Streamlit themes, and enforces axis constraints 
             to prevent zooming beyond data bounds.
         </p>
         <table class="features-table">
@@ -121,19 +122,19 @@
 
         <p>
             <strong>Phase 2: ML-Enhanced Downscaling</strong> 🚧 <em>Planned</em><br>
-            <ul>
-                <li>
-                    Calculate station-based corrections for Spain using <b>CNN models</b> trained on historical ECMWF forecasts and AEMET observations.
-                </li>
-                <li>
-                    Split training into regions: North Coast, Mediterranean, Pyrenees, Sierra Nevada, Sistema Central. 
-                </li>
-                <li>
-                    Resolution expected to improve from ~9km to <b>hyperlocal forecasts</b>, particularly in mountainous areas.
-                </li>
-            </ul> 
-            
         </p>
+        <ul>
+            <li>
+                Calculate station-based corrections for Spain using <b>CNN models</b> trained on historical ECMWF forecasts and AEMET observations.
+            </li>
+            <li>
+                Split training into regions: North Coast, Mediterranean, Pyrenees, Sierra Nevada, Sistema Central. 
+            </li>
+            <li>
+                Resolution expected to improve from ~9km to <b>hyperlocal forecasts</b>, particularly in mountainous areas.
+            </li>
+        </ul> 
+            
         </section>
 
         <section class="setup">
@@ -152,16 +153,15 @@ streamlit run src/meteomat/app.py</code></pre>
 
     </main>
 
-    <!-- Add your footer here -->
-</body>
-</div>
-<div id="footer-placeholder"></div>
+    </div>
+    <div id="footer-placeholder"></div>
 
-<script>
-  fetch('../footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
+    <script>
+    fetch('../footer.html')
+        .then(response => response.text())
+        .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
+    </body>
 </html>

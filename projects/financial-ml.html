@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -15,171 +15,172 @@
   <meta property="og:image" content="https://pablo.matorras.com/assets/img/thumbnails/portfolio_performance_thumbnail.webp">
   <meta property="og:description" content="End-to-end investing pipeline achieving 20.2% annualized returns. Built with Python, Scikit-Learn, and SEC EDGAR data.">
 </head>
-<div class="cover-image"></div>
-<div class="container">
-  <header class="hero">
-    <h1>Financial-ML:</h1>
-    <h2> Predict S&P 500 Outperformers with ML</h2>
-    <p>
-      A machine learning system for equity selection that predicts which S&amp;P stocks will outperform the market
-      benchmark. The project combines <strong> market data, company fundamentals and sentiment indicators </strong> to
-      construct <strong>long-only</strong> portfolios, using through a rigorous ML pipeline: data ingestion → feature
-      engineering → expanding-window cross-validation → portfolio construction → comprehensive backtesting against SPY.
-    </p>
-  </header>
+
+<body>
+  <div class="cover-image"></div>
+  <div class="container">
+    <header class="hero">
+      <h1>Financial-ML:</h1>
+      <h2> Predict S&P 500 Outperformers with ML</h2>
+      <p>
+        A machine learning system for equity selection that predicts which S&amp;P stocks will outperform the market
+        benchmark. The project combines <strong> market data, company fundamentals and sentiment indicators </strong> to
+        construct <strong>long-only</strong> portfolios, using through a rigorous ML pipeline: data ingestion → feature
+        engineering → expanding-window cross-validation → portfolio construction → comprehensive backtesting against SPY.
+      </p>
+    </header>
 
 
-  <section class="key-results">
-    <h2>Key Results</h2>
+    <section class="key-results">
+      <h2>Key Results</h2>
 
-    <table class="summary-table">
-      <tr>
-        <th>Metric</th>
-        <th>Value</th>
-      </tr>
-      <tr>
-        <td>Sharpe Ratio</td> 
-        <td><strong>0.93</strong></td>
-      </tr>
-      <tr>
-        <td>Annual Return</td>
-        <td><strong>20.2%</strong></td>
-      </tr>
-      <tr>
-        <td>Max Drawdown</td>
-        <td><strong>-22.9%</strong></td>
-      </tr>
-      <tr>
-        <td>Alpha vs Random</td>
-        <td><strong>1.72%</strong></td>
-      </tr>
-      <tr>
-        <td>Win Rate</td>
-        <td><strong>69.8%</strong></td>
-      </tr>
-    </table>
-    <figure class="result-chart-container">
-      <img src="/assets/img/portfolio_performance.png" alt="Cumulative Portfolio Returns vs SPY" class="result-chart">
-      <figcaption>Cumulative Portfolio Returns vs SPY</figcaption>
-    </figure>
+      <table class="summary-table">
+        <tr>
+          <th>Metric</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Sharpe Ratio</td> 
+          <td><strong>0.93</strong></td>
+        </tr>
+        <tr>
+          <td>Annual Return</td>
+          <td><strong>20.2%</strong></td>
+        </tr>
+        <tr>
+          <td>Max Drawdown</td>
+          <td><strong>-22.9%</strong></td>
+        </tr>
+        <tr>
+          <td>Alpha vs Random</td>
+          <td><strong>1.72%</strong></td>
+        </tr>
+        <tr>
+          <td>Win Rate</td>
+          <td><strong>69.8%</strong></td>
+        </tr>
+      </table>
+      <figure class="result-chart-container">
+        <img src="/assets/img/portfolio_performance.png" alt="Cumulative Portfolio Returns vs SPY" class="result-chart">
+        <figcaption>Cumulative Portfolio Returns vs SPY</figcaption>
+      </figure>
 
-    <ul>
-      <li>100% Long-Only Strategy: Top 10% stocks, equal-weighted, monthly rebalancing</li>
-      <li>Transaction costs included: 10 bps per trade, ~0.5% annual drag from 42% turnover</li>
-      <li>Regime awareness: VIX-based features improve downside protection during volatile periods</li>
-      <li>Statistically significant: Sharpe ratio outperformance (p &lt; 0.001, Bonferroni-adjusted)</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Data & Features</h2>
+      <ul>
+        <li>100% Long-Only Strategy: Top 10% stocks, equal-weighted, monthly rebalancing</li>
+        <li>Transaction costs included: 10 bps per trade, ~0.5% annual drag from 42% turnover</li>
+        <li>Regime awareness: VIX-based features improve downside protection during volatile periods</li>
+        <li>Statistically significant: Sharpe ratio outperformance (p &lt; 0.001, Bonferroni-adjusted)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Data & Features</h2>
 
-    <table class="features-table">
-      <tr>
-        <th>Data Source</th>
-        <th>Features</th>
-        <th>Purpose</th>
-      </tr>
-      <tr>
-        <td><strong>Market Data</strong><br><em>Yahoo Finance</em></td>
-        <td>
-          r12 (12m return)<br>
-          mom121 (momentum)<br>
-          vol3, vol12 (volatility)
-        </td>
-        <td>Momentum and risk regime signals</td>
-      </tr>
-      <tr>
-        <td><strong>Fundamentals</strong><br><em>SEC EDGAR</em></td>
-        <td>
-          BookToMarket<br>
-          ROE, ROA, NetMargin<br>
-          Leverage, Asset Growth, Net Share Issuance
-        </td>
-        <td>Value, quality, and financial health</td>
-      </tr>
-      <tr>
-        <td><strong>Sentiment</strong><br><em>VIX Index</em></td>
-        <td>VIX percentile (12-month rolling)</td>
-        <td>Market stress detection</td>
-      </tr>
-    </table>
-  </section>
+      <table class="features-table">
+        <tr>
+          <th>Data Source</th>
+          <th>Features</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td><strong>Market Data</strong><br><em>Yahoo Finance</em></td>
+          <td>
+            r12 (12m return)<br>
+            mom121 (momentum)<br>
+            vol3, vol12 (volatility)
+          </td>
+          <td>Momentum and risk regime signals</td>
+        </tr>
+        <tr>
+          <td><strong>Fundamentals</strong><br><em>SEC EDGAR</em></td>
+          <td>
+            BookToMarket<br>
+            ROE, ROA, NetMargin<br>
+            Leverage, Asset Growth, Net Share Issuance
+          </td>
+          <td>Value, quality, and financial health</td>
+        </tr>
+        <tr>
+          <td><strong>Sentiment</strong><br><em>VIX Index</em></td>
+          <td>VIX percentile (12-month rolling)</td>
+          <td>Market stress detection</td>
+        </tr>
+      </table>
+    </section>
 
 
 
-  <section>
-    <h2>Models Evaluated</h2>
-    <ul>
-      <li><strong>Logistic Regression:</strong> Simple baseline for comparison</li>
-      <li><strong>Random Forest:</strong> Selected for production—balances accuracy with stable predictions</li>
-      <li><strong>Gradient Boosting & XGBoost:</strong> Tested but tend to overfit in market prediction tasks</li>
-    </ul>
+    <section>
+      <h2>Models Evaluated</h2>
+      <ul>
+        <li><strong>Logistic Regression:</strong> Simple baseline for comparison</li>
+        <li><strong>Random Forest:</strong> Selected for production—balances accuracy with stable predictions</li>
+        <li><strong>Gradient Boosting & XGBoost:</strong> Tested but tend to overfit in market prediction tasks</li>
+      </ul>
 
-    <p>
-      <strong>Why Random Forest won:</strong> It maintains a wider range of confidence scores,
-      making it better at ranking stocks. Boosting methods were too aggressive and didn't improve results.
-    </p>
-  </section>
+      <p>
+        <strong>Why Random Forest won:</strong> It maintains a wider range of confidence scores,
+        making it better at ranking stocks. Boosting methods were too aggressive and didn't improve results.
+      </p>
+    </section>
 
-  <section>
-    <h2>How It Works</h2>
+    <section>
+      <h2>How It Works</h2>
 
-    <h3>The Pipeline</h3>
-    <ol>
-      <li><strong>Collect Data:</strong> Download market prices (Yahoo Finance), fundamentals from SEC filings, and VIX
-        sentiment</li>
-      <li><strong>Engineer Features:</strong> Extract 13 features from the data (momentum, volatility, value ratios,
-        regime indicators)</li>
-      <li><strong>Train Model:</strong> Use 15 years of historical data with time series cross-validation to prevent
-        overfitting</li>
-      <li><strong>Generate Predictions:</strong> Random Forest model predicts which stocks will outperform S&P 500 next
-        month</li>
-      <li><strong>Construct Portfolio:</strong> Select top 10% highest-confidence stocks, equally weight, rebalance
-        monthly</li>
-      <li><strong>Validate Results:</strong> Backtest against S&P 500 benchmark with real transaction costs</li>
-    </ol><br>
+      <h3>The Pipeline</h3>
+      <ol>
+        <li><strong>Collect Data:</strong> Download market prices (Yahoo Finance), fundamentals from SEC filings, and VIX
+          sentiment</li>
+        <li><strong>Engineer Features:</strong> Extract 13 features from the data (momentum, volatility, value ratios,
+          regime indicators)</li>
+        <li><strong>Train Model:</strong> Use 15 years of historical data with time series cross-validation to prevent
+          overfitting</li>
+        <li><strong>Generate Predictions:</strong> Random Forest model predicts which stocks will outperform S&P 500 next
+          month</li>
+        <li><strong>Construct Portfolio:</strong> Select top 10% highest-confidence stocks, equally weight, rebalance
+          monthly</li>
+        <li><strong>Validate Results:</strong> Backtest against S&P 500 benchmark with real transaction costs</li>
+      </ol><br>
 
-    <h3>Model Validation</h3>
-    <p>
-      The model uses <strong>expanding-window time series cross-validation</strong>, where each month's predictions
-      are tested on future data the model has never seen. This prevents overfitting and mimics real-world deployment.
-    </p><br>
-  </section>
+      <h3>Model Validation</h3>
+      <p>
+        The model uses <strong>expanding-window time series cross-validation</strong>, where each month's predictions
+        are tested on future data the model has never seen. This prevents overfitting and mimics real-world deployment.
+      </p><br>
+    </section>
 
-  <section>
-    <h2>Quick Start</h2>
+    <section>
+      <h2>Quick Start</h2>
 
-    <h3>Installation</h3>
-    <pre><code>git clone https://github.com/pmatorras/financial-ml.git
-cd financial-ml
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .</code></pre>
+      <h3>Installation</h3>
+      <pre><code>git clone https://github.com/pmatorras/financial-ml.git
+  cd financial-ml
+  python -m venv .venv
+  source .venv/bin/activate
+  pip install -e .</code></pre>
 
-    <h3>Run Full Pipeline</h3>
-    <pre><code>make data     # Collect market, fundamentals, sentiment
-make train    # Train models
-make backtest # Analyze and backtest</code></pre>
+      <h3>Run Full Pipeline</h3>
+      <pre><code>make data     # Collect market, fundamentals, sentiment
+  make train    # Train models
+  make backtest # Analyze and backtest</code></pre>
 
-    <h3>Quick Test</h3>
-    <pre><code>make test    # Run pipeline on subset with debug mode</code></pre>
+      <h3>Quick Test</h3>
+      <pre><code>make test    # Run pipeline on subset with debug mode</code></pre>
 
-    <p><br>
-      For advanced usage, flags, and development modes, see the
-      <a href="https://github.com/pmatorras/financial-ml">GitHub repository</a>
-    </p>
-  </section>
+      <p><br>
+        For advanced usage, flags, and development modes, see the
+        <a href="https://github.com/pmatorras/financial-ml">GitHub repository</a>
+      </p>
+    </section>
 
-  </body>
-</div>
-<div id="footer-placeholder"></div>
+  </div>
+  <div id="footer-placeholder"></div>
 
-<script>
-  fetch('../footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
-
+  <script>
+    fetch('../footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+</body>
 </html>
