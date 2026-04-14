@@ -10,11 +10,13 @@ on:
 jobs:
   inject:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
+          persist-credentials: true
       - name: Run inject script
         run: python scripts/inject_head.py
 
