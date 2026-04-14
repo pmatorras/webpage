@@ -5,6 +5,7 @@ on:
     branches: [master]
     paths:
       - "header.js"
+  workflow_dispatch:
 
 jobs:
   inject:
