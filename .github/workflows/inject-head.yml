@@ -2,7 +2,7 @@ name: Inject shared head tags
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - "header.js"
 
