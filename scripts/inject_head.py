@@ -28,9 +28,9 @@ for root, dirs, files in os.walk("."):
         else:
             print(f"Skipped (no <head>): {path}")
             continue
-
+            
+        new_content = re.sub(r'\s*<script src=["\']/?header\.js["\'][^>]*></script>', '', new_content)
         if new_content != content:
-            new_content = re.sub(r'\s*<script src=["\']/?header\.js["\'][^>]*></script>', '', new_content)
             open(path, "w", encoding="utf-8").write(new_content)
             print(f"{action}: {path}")
         else:
