@@ -16,17 +16,17 @@
     <link rel="canonical" href="https://pablo.matorras.com/projects/meteomat.html">
 
     <title>Meteomat - Weather Forecast Dashboard | Pablo Matorras-Cuevas</title>
-    <meta name="description" content="Interactive weather dashboard with probabilistic forecasting and ensemble uncertainty visualization.">
+    <meta name="description" content="Probabilistic weather dashboard blending ECMWF ensemble and HRES forecasts worldwide, with marine variables and configurable forecast horizons.">
     <meta property="og:title" content="Meteomat - Weather Forecast Dashboard | Pablo Matorras-Cuevas">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://pablo.matorras.com/projects/meteomat.html">
     <meta property="og:image" content="https://meteo.matorras.com/preview.jpg">
-    <meta property="og:description" content="Interactive weather dashboard with probabilistic forecasting and ensemble uncertainty visualization.">
+    <meta property="og:description" content="Probabilistic weather dashboard blending ECMWF ensemble and HRES forecasts worldwide, with marine variables and configurable forecast horizons.">
 </head>
 <body>
 <div class="cover-image"></div>
 <div class="container">
-    <span class="project-status"> Status: Phase 1 Complete - Europe Ensemble Visualisation
+    <span class="project-status"> Status: v2 Live - Global Coverage, Marine Forecasts & HRES Blending
     </span>
   <header class="hero">
     <h1>Meteomat: Weather Forecast Dashboard</h1>
@@ -44,19 +44,22 @@
 
         <div class="overview">
         <p><br>
-            Standard weather apps hide forecast uncertainty by showing single-value predictions, leaving users unsure about forecast reliability. <strong>Meteomat</strong> addresses this by visualizing ECMWF ensemble forecasts with probabilistic confidence ranges—answering <b>"how confident is this forecast?"</b> instead of just <b>"what's the forecast?"</b> Built as an interactive dashboard with global coverage (focused primarily on Europe), the application is served through Cloudflare at <a href="https://meteo.matorras.com" target="_blank">meteo.matorras.com</a> and deployed on Hugging Face Spaces with automatic fallback mechanisms.
+            Standard weather apps hide forecast uncertainty by showing single-value predictions, leaving users unsure about forecast reliability. <strong>Meteomat</strong> addresses this by visualizing probabilistic forecasts with confidence ranges - answering <b>"how confident is this forecast?"</b> instead of just <b>"what's the forecast?"</b>
         </p>
-
-
+        <p>
+            v2 brings three major upgrades: <strong>HRES blending</strong> combines the 51-member ECMWF ensemble with the higher-resolution HRES run for sharper best estimates while keeping uncertainty bands intact; a <strong>marine tab</strong> exposes swell and wind wave height/period and sea surface temperature; and a <strong>horizon picker</strong> lets you choose between 24 h, 72 h, and 7-day views. The app is served through Cloudflare at <a href="https://meteo.matorras.com" target="_blank">meteo.matorras.com</a> and deployed on Hugging Face Spaces.
+        </p>
         </div>
 
         <section class="features-table">
         <h2>Key Features</h2>
         <ul>
+            <li><strong>HRES + Ensemble Blending:</strong> Sharper best estimates by blending the 51-member EPS with the 9 km HRES run, while retaining full uncertainty bands (50/50 when rain is expected, 75/25 otherwise)</li>
             <li><strong>Ensemble Uncertainty:</strong> 10th/50th/90th percentile bands from 51 ECMWF ensemble members</li>
+            <li><strong>Marine Tab:</strong> Swell and wind wave height/period, sea surface temperature - inspired by growing up checking surf conditions on the Cantabrian coast</li>
             <li><strong>Multi-Variable Forecasts:</strong> Temperature, rainfall, wind speed/direction, humidity</li>
-            <li><strong>Interactive Map:</strong> Click any European location or search by city name</li>
-            <li><strong>7-Day Horizon:</strong> Hourly resolution forecasts</li>
+            <li><strong>Forecast Horizon Picker:</strong> Switch between 24 h, 72 h, and 7-day views</li>
+            <li><strong>Worldwide Coverage:</strong> Click any location on the globe or search by city name</li>
             <li><strong>Custom Visualizations:</strong> Plotly with JavaScript theming and smart tick generation</li>
         </ul>
         </section>
@@ -64,9 +67,7 @@
         <section class="architecture"><br>
         <h2>Technical Architecture</h2>
         <p>
-            <strong>Data Pipeline:</strong> Real-time ECMWF IFS ensemble forecasts are fetched via the <a href="https://open-meteo.com" target="_blank">Open-Meteo API</a> based on user-selected coordinates, 
-            processed to extract percentiles (10th/50th/90th) from 51 ensemble members, and rendered as interactive 
-            Plotly charts with custom JavaScript theming in Streamlit.
+            <strong>Data Pipeline:</strong> Real-time forecasts are fetched via the <a href="https://open-meteo.com" target="_blank">Open-Meteo API</a> based on user-selected coordinates. Weather variables pull both the 51-member ECMWF EPS and the single-run HRES, which are blended before rendering. Marine variables come from the ECMWF Wave Model. Percentiles (10th/50th/90th) are computed on the fly and rendered as interactive Plotly charts with custom JavaScript theming in Streamlit.
         </p>
         <p>
             <strong>Custom JavaScript Integration:</strong>Implemented <code>smart_ticks.js</code> for dynamic x-axis formatting that adapts tick intervals to zoom level 
@@ -90,7 +91,7 @@
                 <tr>
                     <td><strong>Data Source</strong></td>
                     <td>Open-Meteo API</td>
-                    <td>ECMWF IFS Ensemble forecasts</td>
+                    <td>ECMWF IFS Ensemble (EPS) + HRES weather forecasts; ECMWF Wave Model for marine variables</td>
                 </tr>
                 <tr>
                     <td><strong>Hosting</strong></td>
@@ -120,17 +121,22 @@
         </p>
 
         <p>
-            <strong>Phase 2: ML-Enhanced Downscaling</strong> 🚧 <em>Planned</em><br>
+            <strong>Phase 2: Global Coverage, HRES Blending & Marine Forecasts</strong> ✅ <em>Completed June 2026</em><br>
+            Extended coverage worldwide, blended the HRES run with the ensemble for sharper estimates, added a marine tab with swell/wave height, period, and SST, and introduced the forecast horizon picker (24 h / 72 h / 7 d).
+        </p>
+
+        <p>
+            <strong>Phase 3: ML-Enhanced Downscaling</strong> 🚧 <em>Planned</em><br>
         </p>
         <ul>
             <li>
                 Calculate station-based corrections for Spain using <b>CNN models</b> trained on historical ECMWF forecasts and AEMET observations.
             </li>
             <li>
-                Split training into regions: North Coast, Mediterranean, Pyrenees, Sierra Nevada, Sistema Central. 
+                Split training into regions: North Coast, Mediterranean, Pyrenees, Sierra Nevada, Sistema Central.
             </li>
             <li>
-                Resolution expected to improve from ~9km to <b>hyperlocal forecasts</b>, particularly in mountainous areas.
+                Resolution expected to improve from ~9 km to <b>hyperlocal forecasts</b>, particularly in mountainous areas.
             </li>
         </ul> 
             
