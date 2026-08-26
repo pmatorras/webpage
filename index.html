@@ -68,7 +68,7 @@
         I build end-to-end ML pipelines, digital twins, and transformer-based models for industrial time-series data, as well as LLM-powered applications from scratch; translating the statistical rigour of particle physics into real-world energy and production challenges.</p>
       <h2>Quick Links</h2>
       <ul class="about-icons">
-        <li><a href="#projects">Featured Projects</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#work-experience">Work Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#scientific-production">Scientific Production</a></li>
@@ -117,54 +117,59 @@
 
 <section id="projects">
   <div class="container">
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
 
-    <h3>🤖 Machine Learning & Prediction</h3>
-    <ul class="project-list">
-        <li class="project-card">
-            <strong><a href="projects/financial-ml.html">Financial-ML - Equity Selection System:</a></strong> A Machine Learning system for equity selection that predicts S&P 500 outperformers using market data, fundamentals, and sentiment indicators. Achieved <strong>20.2% annual returns</strong> and <strong>0.93 Sharpe ratio</strong> using time series cross-validation and Random Forest models.
-        </li>
-        <li class="project-card">
-            <strong>
-                <a href="projects/footai.html">footAI - Football Analytics:</a>
-            </strong>
-                End-to-end system predicting match outcomes across Europe's top five leagues. 
-                Combines Elo ratings with RandomForest achieving <strong>50.5% accuracy</strong> and <strong>37.4% draw recall</strong>.
-        </li>
-    </ul>
+    <h3>Personal Projects</h3>
+    <p>I build and maintain personal, open-source projects spanning predictive modelling, natural language processing, and data engineering.</p>
 
-    <h3>🔤 Natural Language Processing</h3>
-    <ul class="project-list">
-        <li class="project-card">
-            <strong>
-                <a href="projects/finsentiment.html">Financial-Sentiment-LLM: </a>
-            </strong>
-                Advanced NLP pipeline fine-tuning <strong>FinBERT</strong> for financial sentiment analysis. 
-                Multi-task architecture achieving <strong>85.4% accuracy</strong> across news, social media, and forums.
-        </li>
-    </ul>
+    <p>
+      <strong>🤖 Machine Learning & Prediction:</strong> I developed predictive models applied to finance and sports:
+      <a href="projects/financial-ml.html">Financial-ML</a>, an equity selection system using market data, fundamentals,
+      and sentiment indicators, achieving <strong>20.2% annual returns</strong> and a <strong>0.93 Sharpe ratio</strong>;
+      and <a href="projects/footai.html">footAI</a>, an end-to-end system predicting match outcomes across Europe's top
+      five leagues by combining Elo ratings with Random Forest, reaching <strong>50.5% accuracy</strong> and
+      <strong>37.4% draw recall</strong>.
+    </p>
+    <p>
+      <strong>🔤 Natural Language Processing:</strong> I fine-tuned <a href="projects/finsentiment.html">FinBERT</a> for
+      financial sentiment analysis, building a multi-task architecture that learns jointly across news, social media, and
+      forum text to reach <strong>85.4% accuracy</strong>, adapting a language model to a specific, noisy domain rather
+      than just prompting a general one.
+    </p>
+    <p>
+      <strong>📈 Data Engineering & Visualization:</strong> I created <a href="projects/meteomat.html">Meteomat</a>, a
+      probabilistic weather dashboard blending <strong>ECMWF ensemble (EPS) and HRES</strong> forecasts for sharper
+      estimates with uncertainty bands, covering worldwide locations with a marine tab (swell, waves, sea-surface
+      temperature), deployed at <a href="https://meteo.matorras.com" target="_blank" class="external-link">meteo.matorras.com</a>.
+      I also developed <a href="projects/pulsetransit.html">PulseTransit</a>, a real-time pipeline turning GPS and ETA
+      data from Santander's public buses into a live map of the city's transit network, deployed at
+      <a href="https://tustracker.matorras.com" target="_blank" class="external-link">tustracker.matorras.com</a>, and a
+      <a href="projects/macroeconomics.html">macroeconomics dashboard</a> visualizing IMF economic indicators across
+      countries with interactive geospatial visualization.
+    </p>
 
-    <h3>📈 Data Engineering & Visualization</h3>
-    <ul class="project-list">
-        <li class="project-card">
-            <strong>
-                <a href="projects/meteomat.html">Meteomat: </a>
-            </strong>
-            Probabilistic weather dashboard blending <strong>ECMWF ensemble (EPS) and HRES</strong> forecasts for sharper estimates with uncertainty bands. v2 adds worldwide coverage, a marine tab (swell, waves, SST), and a forecast horizon picker. Deployed on HF Spaces (see <a href="https://meteo.matorras.com" target="_blank" class="external-link">meteo.matorras.com</a>).
-        </li>
-        <li class="project-card">
-            <strong>
-                <a href="projects/pulsetransit.html">PulseTransit:</a>
-            </strong>
-            Real-time data pipeline for Santander's public bus network. Collects GPS positions and ETA predictions via Cloudflare Workers to build datasets for delay analysis and ML-based arrival prediction.deployed on Cloudare via HF Spaces (see <a href="https://tustracker.matorras.com" target="_blank" class="external-link">tustracker.matorras.com</a>).
-        </li>
-        <li class="project-card">
-            <strong>
-                <a href="projects/macroeconomics.html">MacroEconomics Dashboard:</a>
-            </strong>
-            Interactive dashboard exploring macroeconomic indicators across countries with Plotly/Dash, featuring time series analysis and geospatial visualization.
-        </li>
-    </ul>
+    <h3>Professional Projects</h3>
+    <p>At Centro Tecnológico CTC, I work on projects spanning predictive modelling, infrastructure analytics, and internal LLM tooling.</p>
+
+    <p>
+      <strong>Predictive Modelling & Time-Series:</strong> I'm building predictive models for battery State of Health
+      and Remaining Useful Life for GIRA's electric vehicle battery packs
+      (<a href="https://www.giracantabria.com/post/gira-impulsa-desde-cantabria-el-proyecto-batechain-para-reforzar-la-competitividad-de-la-industria-e" target="_blank" class="external-link">Batechain</a>),
+      engineering per-cycle waveform encoders paired with cross-cycle sequence models (CNN, LSTM, and Transformer),
+      and benchmarking them against pretrained time-series foundation models (PatchTST, Chronos) adapted as
+      interchangeable encoders.
+    </p>
+    <p>
+      <strong>Infrastructure Analytics:</strong> I'm developing predictive analytics for datacenter infrastructure
+      (<a href="https://protwin-project.com/" target="_blank" class="external-link">Protwin</a>), combining time-series
+      forecasting with anomaly detection to flag potential hardware failures from historical monitoring data before
+      they occur.
+    </p>
+    <p>
+      <strong>Internal LLM Tooling:</strong> I've also built an internal system that runs local, self-hosted LLMs over
+      private company data, powering a retrieval-augmented knowledge base and a conversational agent that decides
+      between semantic search, direct lookup, and filtered queries depending on what's being asked.
+    </p>
   </div>
 </section>
 
@@ -176,9 +181,9 @@
     <p><strong>2026 - Present</strong> | <em>Santander, Spain</em></p>
     <ul>
       <li><strong>ML pipelines for industrial production:</strong> Building end-to-end machine learning pipelines to optimise industrial production processes.</li>
-      <li><strong>Digital twins & energy systems:</strong> Developing digital twins and statistical models to enhance sustainable energy conversion systems.</li>
-      <li><strong>Time-series modelling:</strong> Engineering predictive algorithms and exploring transformer architectures to model high-dimensional, time-series data.</li>
+      <li><strong>Time-series modelling:</strong> Engineering predictive algorithms and transformer architectures for industrial time-series data.</li>
       <li><strong>LLM development:</strong> Building LLM-powered applications from scratch, including document summarisation and conversational systems.</li>
+      <li><strong>Infrastructure & systems analytics:</strong> Developing predictive analytics and digital twins for infrastructure and energy systems.</li>
     </ul>
 
     <h3>Graduate Researcher | Instituto de Física de Cantabria (IFCA)</h3>
