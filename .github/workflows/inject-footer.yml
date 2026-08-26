@@ -1,0 +1,29 @@
+name: Inject shared footer
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "footer.html"
+  workflow_dispatch:
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+      - name: Run inject script
+        run: python scripts/inject_footer.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "ci: sync footer from footer.html"
+          git push
